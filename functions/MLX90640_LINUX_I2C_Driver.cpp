@@ -31,7 +31,7 @@
 #include <sys/ioctl.h>
 
 int i2c_fd = 0;
-const char *i2c_device = "/dev/i2c-1";
+const char *i2c_device = "/dev/i2c-5";
 
 void MLX90640_I2CInit()
 {

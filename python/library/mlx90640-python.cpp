@@ -6,7 +6,7 @@
 #include <thread>
 #include <math.h>
 #include "MLX90640/MLX90640_API.h"
-#include "MLX90640/MLX90640_I2C_Driver.h"
+//#include "MLX90640/MLX90640_I2C_Driver.h"
 
 #define MLX_I2C_ADDR 0x33
 
@@ -29,6 +29,7 @@ float eTa;
 //extern "C" 
 int setup(int fps){
 	MLX90640_SetDeviceMode(MLX_I2C_ADDR, 0);
+    printf("After set device function\n");
 	MLX90640_SetSubPageRepeat(MLX_I2C_ADDR, 0);
 
 	//int t = (1000000 / fps) + OFFSET_MICROS;
