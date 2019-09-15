@@ -22,6 +22,7 @@ Build-modes are:
 
 * `make` or `make all`: default, build the library using Python 2 bindings
 * `make python3`: build the library telling swig to create Python 3 bindings
-* `make install`: install the library into the system
+* `make install`: install the library into the system using Python 2
+* `make install3`: install the library into the system using Python 3
 
 The makefile allways calls the `python` binary without specified an explicit version. Use `sudo update-alternatives --config python` to set the *correct* default value (Python 2 or 3)
