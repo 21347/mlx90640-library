@@ -1,12 +1,12 @@
 # mlx90640-library
-MLX90640 library functions
+MLX90640 library functions for Odroid XU4
 
 ## Raspberry Pi Users
 
 ** EXPERIMENTAL **
 
-This port uses either generic Linux I2C or the  bcm2835 library.
-Upon building, the mode is set with the I2C_MODE property, i.e. `make I2C_MODE=LINUX` or `make I2C_MODE=RPI`. The default is LINUX, without the need for the bcm2835 library or root access.
+This port uses the generic Linux I2C.
+Upon building, the mode is set with the I2C_MODE property, i.e. `make I2C_MODE=LINUX` or `make I2C_MODE=RPI`. The default is LINUX, without the need for the bcm2835 library or root access. (bcm2835 is used with Raspberry Pi; does not work with Odroid).
 
 ### Generic Linux I2C Mode
 
@@ -39,26 +39,6 @@ Now build the MLX90640 library and examples in LINUX I2C mode:
 ```text
 make clean
 make I2C_MODE=LINUX
-```
-
-### BCM2835 Library Mode
-
-To use the bcm2835 library, install like so:
-
-
-```text
-make bcm2835
-```
-
-Or, step by step:
-
-```text
-wget http://www.airspayce.com/mikem/bcm2835/bcm2835-1.55.tar.gz
-tar xvfz bcm2835-1.55.tar.gz
-cd bcm2835-1.55
-./configure
-make
-sudo make install
 ```
 
 ### Dependencies
