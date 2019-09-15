@@ -1,12 +1,15 @@
 # mlx90640-library
 MLX90640 library functions for Odroid XU4
 
-## Raspberry Pi Users
+## Odroid XU4 Users
 
 ** EXPERIMENTAL **
 
 This port uses the generic Linux I2C.
-Upon building, the mode is set with the I2C_MODE property, i.e. `make I2C_MODE=LINUX` or `make I2C_MODE=RPI`. The default is LINUX, without the need for the bcm2835 library or root access. (bcm2835 is used with Raspberry Pi; does not work with Odroid).
+ Upon building, the mode is set with the I2C_MODE property, i.e. `make I2C_MODE=LINUX` or `make I2C_MODE=RPI`. The default is LINUX, without the need for the bcm2835 library or root access. (bcm2835 is used with Raspberry Pi; does not work with Odroid).
+
+### Sensor connection to Odroid XU4
+The MLX90640 sensor must be connected to the I2C_5 lines in the CONN11 header of the Odroid XU4. A level shifter from 1.8V to 3.3V must be used in order to connect with the sensor. The XU4 Shifter Shield from HardKernel is recommended for this application, since it uses the TXS-type translators from Texas Instruments. Logic level converters such us the ones from Adafruit use TXB-type translators, which are not designed for open-drain applications, don't work well for I2C communication.
 
 ### Generic Linux I2C Mode
 

@@ -29,7 +29,6 @@ float eTa;
 //extern "C" 
 int setup(int fps){
 	MLX90640_SetDeviceMode(MLX_I2C_ADDR, 0);
-    printf("After set device function\n");
 	MLX90640_SetSubPageRepeat(MLX_I2C_ADDR, 0);
 
 	//int t = (1000000 / fps) + OFFSET_MICROS;

@@ -14,8 +14,10 @@ sources = ['mlx90640-python.cpp']
 # wrapper from the source distribution.
 if find_executable('swig'):
     sources += ['MLX90640.i']
+    print('Using MLX90640.i')
 elif os.path.exists('MLX90640_wrap.cxx'):
     sources += ['MLX90640_wrap.cxx']
+    print('Using MLX90640_wrap.cxx')
 elif os.path.exists('MLX90640_wrap.c'):
     sources += ['MLX90640_wrap.c']
 else:
